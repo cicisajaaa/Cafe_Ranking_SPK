@@ -1,4 +1,4 @@
-# ☕ Cafe Rank — Decision Support System (TOPSIS)
+# Cafe Rank — Decision Support System (TOPSIS)
 
 Sistem pendukung keputusan berbasis web untuk menentukan rekomendasi cafe terbaik menggunakan metode **TOPSIS (Technique for Order Preference by Similarity to Ideal Solution)**.
 
@@ -6,7 +6,7 @@ Sistem ini membantu proses penilaian beberapa cafe berdasarkan kriteria tertentu
 
 ---
 
-## 🚀 Fitur Aplikasi
+## Fitur Aplikasi
 
 - Login multi role (Admin, Mahasiswa, Owner)
 - Manajemen data cafe (CRUD)
