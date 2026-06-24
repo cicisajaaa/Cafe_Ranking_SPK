@@ -1,58 +1,140 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ☕ Cafe Rank — Decision Support System (TOPSIS)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem pendukung keputusan berbasis web untuk menentukan rekomendasi cafe terbaik menggunakan metode **TOPSIS (Technique for Order Preference by Similarity to Ideal Solution)**.
 
-## About Laravel
+Sistem ini membantu proses penilaian beberapa cafe berdasarkan kriteria tertentu sehingga menghasilkan ranking yang objektif dan terukur.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Fitur Aplikasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Login multi role (Admin, Mahasiswa, Owner)
+- Manajemen data cafe (CRUD)
+- Manajemen kriteria penilaian
+- Perhitungan TOPSIS otomatis
+- Ranking cafe berdasarkan hasil perhitungan
+- Export hasil ranking ke PDF
+- Dashboard berbeda sesuai role
+- UI responsive (Bootstrap 5)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 👥 Role Pengguna
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 👨‍💼 Admin
+- Mengelola data cafe
+- Mengelola kriteria
+- Menjalankan perhitungan TOPSIS
+- Melihat hasil ranking
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### 🎓 Mahasiswa
+- Melihat daftar cafe
+- Melihat detail cafe
+- Melihat ranking hasil TOPSIS
 
-## Agentic Development
+### 🧑‍💼 Owner
+- Monitoring hasil ranking cafe
+- Melihat posisi cafe
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
+
+## 🖼️ Tampilan Aplikasi
+
+### 🔐 Login
+![Login](public/screenshots/login.png)
+
+### 📊 Dashboard Admin
+![Dashboard Admin](public/screenshots/admin-dashboard.png)
+
+### ☕ Data Cafe
+![Data Cafe](public/screenshots/admin-datacafe.png)
+
+### ➕ Tambah Cafe
+![Tambah Cafe](public/screenshots/admin-tambahcafe.png)
+
+### 📌 Data Kriteria
+![Data Kriteria](public/screenshots/admin-datakriteria.png)
+
+### ➕ Tambah Kriteria
+![Tambah Kriteria](public/screenshots/admin-tambahkriteria.png)
+
+### 🧠 Proses TOPSIS
+![Hitung TOPSIS](public/screenshots/admin-hitungtopsis.png)
+
+### 🏆 Hasil Ranking
+![Ranking](public/screenshots/admin-ranking.png)
+
+### 📄 Export PDF
+![Export PDF](public/screenshots/admin-exportpdf.png)
+
+### 📈 Hasil Perhitungan
+![Hasil Perhitungan](public/screenshots/admin-cafeberhasil.png)
+
+### 🧾 Hasil Kriteria (Berhasil)
+![Kriteria Hasil](public/screenshots/admin-kriteriaberhasil.png)
+
+---
+
+### 🎓 Dashboard Mahasiswa
+![Mahasiswa Dashboard](public/screenshots/mahasiswa-dashboard.png)
+
+### ☕ Detail Cafe
+![Detail Cafe](public/screenshots/mahasiswa-detailcafe.png)
+
+### 🏆 Ranking Mahasiswa
+![Ranking Mahasiswa](public/screenshots/mahasiswa-ranking.png)
+
+---
+
+### 🧑‍💼 Dashboard Owner
+![Owner Dashboard](public/screenshots/owner-dashboard.png)
+
+### 📊 Owner Ranking
+![Owner Ranking](public/screenshots/owner-ranking.png)
+
+---
+
+## 🛠️ Teknologi
+
+- Laravel 10
+- MySQL
+- Bootstrap 5
+- DataTables
+- SweetAlert2
+- DomPDF
+
+---
+
+## 🧠 Metode TOPSIS
+
+Langkah perhitungan:
+
+1. Normalisasi matriks keputusan
+2. Pembobotan kriteria
+3. Menentukan solusi ideal positif & negatif
+4. Menghitung jarak setiap alternatif
+5. Menghitung nilai preferensi
+6. Menentukan ranking terbaik
+
+---
+
+## 📁 Struktur Folder Screenshot
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+public/screenshots/
+├── login.png
+├── admin-dashboard.png
+├── admin-datacafe.png
+├── admin-tambahcafe.png
+├── admin-datakriteria.png
+├── admin-tambahkriteria.png
+├── admin-hitungtopsis.png
+├── admin-ranking.png
+├── admin-exportpdf.png
+├── admin-cafeberhasil.png
+├── admin-kriteriaberhasil.png
+├── mahasiswa-dashboard.png
+├── mahasiswa-detailcafe.png
+├── mahasiswa-ranking.png
+├── owner-dashboard.png
+├── owner-ranking.png
