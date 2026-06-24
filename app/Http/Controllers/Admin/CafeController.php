@@ -23,7 +23,7 @@ class CafeController extends Controller
     {
         Cafe::create($request->all());
 
-        return redirect('/cafes')
+        return redirect()->route('admin.cafes.index')
             ->with('success', 'Data cafe berhasil ditambahkan');
     }
 
@@ -35,20 +35,21 @@ class CafeController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        $cafe = Cafe::findOrFail($id);
+{
+    $cafe = Cafe::findOrFail($id);
 
-        $cafe->update($request->all());
+    $cafe->update($request->all());
 
-        return redirect('/cafes')
-            ->with('success', 'Data cafe berhasil diupdate');
-    }
+    return redirect()->route('admin.cafes.index')
+        ->with('success', 'Data cafe berhasil diupdate');
+}
 
     public function destroy($id)
     {
-        Cafe::destroy($id);
+        $cafe = Cafe::findOrFail($id);
+        $cafe->delete();
 
-        return redirect('/cafes')
+        return redirect()->route('admin.cafes.index')
             ->with('success', 'Data cafe berhasil dihapus');
     }
 }

@@ -6,7 +6,7 @@
 <div class="max-w-6xl mx-auto">
     <div class="flex items-center justify-between gap-4 mb-4">
         <h1 class="text-2xl font-semibold text-[#1b1b18]">Data Cafe</h1>
-        <a href="{{ route('cafes.create') }}" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 border border-gray-200 text-[#1b1b18]">
+        <a href="{{ route('admin.cafes.create') }}" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-200 border border-gray-200 text-[#1b1b18]">
             + Tambah Cafe
         </a>
     </div>

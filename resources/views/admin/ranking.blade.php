@@ -11,13 +11,14 @@
         </small>
     </div>
 
-    <form action="/calculate-topsis" method="POST">
-        @csrf
-        <button class="btn btn-primary">
-            <i class="bi bi-calculator"></i>
-            Hitung TOPSIS
-        </button>
-    </form>
+    <form action="{{ route('admin.ranking.calculate') }}" method="POST">
+    @csrf
+
+    <button class="btn btn-primary">
+        <i class="bi bi-calculator"></i>
+        Hitung TOPSIS
+    </button>
+</form>
 
 </div>
 

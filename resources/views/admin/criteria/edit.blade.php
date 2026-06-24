@@ -17,8 +17,7 @@
 
     <div class="card-body">
 
-        <form action="/criteria/{{ $criteria->id }}"
-              method="POST">
+        <form action="{{ route('admin.criteria.update', $criteria->id) }}" method="POST">
 
             @csrf
             @method('PUT')

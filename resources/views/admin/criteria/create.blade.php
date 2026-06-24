@@ -4,14 +4,16 @@
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="fw-bold">Tambah Kriteria</h2>
-    <a href="/criteria" class="btn btn-secondary">
+
+    <a href="{{ route('admin.criteria.index') }}" class="btn btn-secondary">
         <i class="bi bi-arrow-left"></i> Kembali
     </a>
 </div>
 
 <div class="card shadow-sm border-0">
     <div class="card-body">
-        <form action="/criteria" method="POST">
+
+        <form action="{{ route('admin.criteria.store') }}" method="POST">
             @csrf
 
             <div class="mb-3">
@@ -40,7 +42,9 @@
             <button type="submit" class="btn btn-primary">
                 <i class="bi bi-save"></i> Simpan Kriteria
             </button>
+
         </form>
+
     </div>
 </div>
 

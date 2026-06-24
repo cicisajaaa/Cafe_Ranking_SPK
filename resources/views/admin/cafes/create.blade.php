@@ -2,66 +2,91 @@
 
 @section('content')
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="fw-bold">Tambah Cafe</h2>
-    <a href="/cafes" class="btn btn-secondary">
-        <i class="bi bi-arrow-left"></i> Kembali
-    </a>
-</div>
+<div class="container-fluid px-4">
 
-<div class="card shadow-sm border-0">
-    <div class="card-body">
-        <form action="/cafes" method="POST">
-            @csrf
-
-            <div class="mb-3">
-                <label class="form-label">Nama Cafe</label>
-                <input type="text" name="nama_cafe" class="form-control" required>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Harga</label>
-                    <input type="number" name="harga" class="form-control" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Kecepatan Wifi</label>
-                    <input type="number" name="kecepatan_wifi" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Kenyamanan</label>
-                    <input type="number" name="kenyamanan" class="form-control" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Ketersediaan Colokan</label>
-                    <input type="number" name="colokan" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Jarak dari Kampus</label>
-                    <input type="number" step="0.1" name="jarak" class="form-control" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label class="form-label">Jam Operasional</label>
-                    <input type="number" name="jam_operasional" class="form-control" required>
-                </div>
-            </div>
-            <div class="mb-3">
+    <!-- HEADER -->
     <div class="mb-3">
-    <label for="alamat" class="form-label">Alamat Cafe</label>
-    <input type="text" name="alamat" id="alamat" class="form-control" value="{{ old('alamat', $cafe->alamat ?? '') }}">
-</div>
+        <div class="d-flex justify-content-between align-items-center">
 
-            <button type="submit" class="btn btn-primary">
-                <i class="bi bi-save"></i> Simpan Data
-            </button>
-        </form>
+            <div>
+                <h4 class="fw-bold mb-1">Tambah Cafe</h4>
+                <small class="text-muted">
+                    Tambahkan data cafe untuk perhitungan TOPSIS
+                </small>
+            </div>
+
+            <a href="{{ route('admin.cafes.index') }}" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-arrow-left me-1"></i> Kembali
+            </a>
+
+        </div>
     </div>
+
+    <!-- CARD -->
+    <div class="card shadow-sm border-0">
+
+        <div class="card-body p-3">
+
+            <form action="{{ route('admin.cafes.store') }}" method="POST">
+                @csrf
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Nama Cafe</label>
+                        <input type="text" name="nama_cafe" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Harga</label>
+                        <input type="number" name="harga" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Kecepatan Wifi</label>
+                        <input type="number" name="kecepatan_wifi" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Kenyamanan</label>
+                        <input type="number" name="kenyamanan" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Colokan</label>
+                        <input type="number" name="colokan" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Jarak (km)</label>
+                        <input type="number" step="0.1" name="jarak" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Jam Operasional</label>
+                        <input type="number" name="jam_operasional" class="form-control" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Alamat</label>
+                        <input type="text" name="alamat" class="form-control">
+                    </div>
+
+                </div>
+
+                <!-- BUTTON -->
+                <div class="mt-3 text-end">
+                    <button type="submit" class="btn btn-primary btn-sm px-4">
+                        <i class="bi bi-check-circle me-1"></i>
+                        Simpan
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
 </div>
 
 @endsection

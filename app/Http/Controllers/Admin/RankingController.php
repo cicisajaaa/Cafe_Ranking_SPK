@@ -37,6 +37,7 @@ class RankingController extends Controller
             'C4' => 'colokan',
             'C5' => 'jarak',
             'C6' => 'jam_operasional',
+            'C7' => 'percobaan',
         ];
 
         $matriks = [];
@@ -163,7 +164,7 @@ class RankingController extends Controller
             ]);
         }
 
-        return redirect('/ranking')
+        return redirect()->route('admin.ranking.index')
             ->with('success', 'Perhitungan TOPSIS berhasil');
     }
     public function exportPdf() {

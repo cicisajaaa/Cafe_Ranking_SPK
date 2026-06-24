@@ -34,8 +34,8 @@ Route::middleware(['auth'])
     Route::get('/dashboard', [DashboardController::class,'index'])
         ->name('dashboard');
 
-    Route::resource('/cafes', CafeController::class);
-    Route::resource('/criteria', CriteriaController::class);
+    Route::resource('/cafes', CafeController::class)->except(['show']);
+    Route::resource('criteria', CriteriaController::class);
 
     Route::get('/ranking', [RankingController::class,'index'])
         ->name('ranking.index');

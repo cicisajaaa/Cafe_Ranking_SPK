@@ -23,26 +23,31 @@ class CriteriaController extends Controller
     {
         Criteria::create($request->all());
 
-        return redirect('/criteria')->with('success','Kriteria berhasil ditambahkan');
+        return redirect()->route('admin.criteria.index')
+            ->with('success', 'Kriteria berhasil ditambahkan');
     }
 
     public function edit($id)
     {
         $criteria = Criteria::findOrFail($id);
+
         return view('admin.criteria.edit', compact('criteria'));
     }
 
     public function update(Request $request, $id)
-    {
-        $criteria = Criteria::findOrFail($id);
-        $criteria->update($request->all());
+{
+    $criteria = Criteria::findOrFail($id);
+    $criteria->update($request->all());
 
-        return redirect('/criteria')->with('success','Kriteria berhasil diupdate');
-    }
+    return redirect()->route('admin.criteria.index')
+        ->with('success', 'Kriteria berhasil diupdate');
+}
 
     public function destroy($id)
     {
         Criteria::destroy($id);
-        return redirect('/criteria')->with('success','Kriteria berhasil dihapus');
+
+        return redirect()->route('admin.criteria.index')
+            ->with('success', 'Kriteria berhasil dihapus');
     }
 }
