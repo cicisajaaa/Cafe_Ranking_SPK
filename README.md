@@ -117,24 +117,3 @@ Langkah perhitungan:
 6. Menentukan ranking terbaik
 
 ---
-
-## 📁 Struktur Folder Screenshot
-
-```bash
-public/screenshots/
-├── login.png
-├── admin-dashboard.png
-├── admin-datacafe.png
-├── admin-tambahcafe.png
-├── admin-datakriteria.png
-├── admin-tambahkriteria.png
-├── admin-hitungtopsis.png
-├── admin-ranking.png
-├── admin-exportpdf.png
-├── admin-cafeberhasil.png
-├── admin-kriteriaberhasil.png
-├── mahasiswa-dashboard.png
-├── mahasiswa-detailcafe.png
-├── mahasiswa-ranking.png
-├── owner-dashboard.png
-├── owner-ranking.png
